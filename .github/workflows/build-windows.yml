@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup CMake
         uses: lukka/get-cmake@latest
@@ -32,7 +32,7 @@ jobs:
           cp presets/Default.xml artifacts/ 2>/dev/null || echo "No preset file found"
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: FIELD-Windows-VST3
           path: artifacts/
