@@ -6,6 +6,11 @@ project(FIELD VERSION 2.0.0)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# macOS: Treat deprecation as warnings not errors (for JUCE 7 + macOS 15 compatibility)
+if(APPLE)
+    add_compile_options(-Wno-error=deprecated-declarations)
+endif()
+
 # Fetch JUCE 7 (stable version for reliable CI/CD builds)
 include(FetchContent)
 FetchContent_Declare(
