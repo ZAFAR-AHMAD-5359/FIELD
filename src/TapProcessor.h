@@ -18,7 +18,7 @@ public:
 
     void prepare(double sampleRate) {
         delayLine.prepare(sampleRate);
-        filter.setSampleRate(sampleRate);
+        filter.prepare(sampleRate);
     }
 
     void reset() {
@@ -47,7 +47,9 @@ public:
 
     void setFilterFrequency(float freqHz) {
         // Always use low-pass filter for FIELD
-        filter.setParameters(BiquadFilter::Type::LowPass, freqHz, 0.707f);
+        filter.setType(BiquadFilter::Type::LowPass);
+        filter.setFrequency(freqHz);
+        filter.setQ(0.707f);
     }
 
     void setGainDb(float gainDb) {

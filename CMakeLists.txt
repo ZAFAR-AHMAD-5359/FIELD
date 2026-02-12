@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.22)
 
 project(FIELD VERSION 2.0.0)
 
-# C++17 required
-set(CMAKE_CXX_STANDARD 17)
+# C++20 required (for designated initializers in ModePresets.h)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Fetch JUCE 7 (stable version for reliable CI/CD builds)
