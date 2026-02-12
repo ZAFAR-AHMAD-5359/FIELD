@@ -59,6 +59,7 @@ target_compile_definitions(FIELD
         JUCE_WEB_BROWSER=0
         JUCE_USE_CURL=0
         JUCE_VST3_CAN_REPLACE_VST2=0
+        JUCE_SILENCE_XCODE_15_LINKER_WARNING=1
 )
 
 # Link libraries
@@ -79,4 +80,6 @@ if(APPLE)
         XCODE_ATTRIBUTE_DEVELOPMENT_TEAM ""
         XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
     )
+    # Treat deprecation warnings as warnings, not errors (for JUCE 7 + macOS 15 compatibility)
+    target_compile_options(FIELD PRIVATE -Wno-error=deprecated-declarations)
 endif()
