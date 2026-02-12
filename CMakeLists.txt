@@ -65,6 +65,9 @@ target_compile_definitions(FIELD
         JUCE_USE_CURL=0
         JUCE_VST3_CAN_REPLACE_VST2=0
         JUCE_SILENCE_XCODE_15_LINKER_WARNING=1
+    PRIVATE
+        JUCE_DISPLAY_SPLASH_SCREEN=0
+        JUCE_USE_CAMERA=0
 )
 
 # Link libraries
