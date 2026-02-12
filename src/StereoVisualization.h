@@ -36,7 +36,7 @@ public:
 
         // L/R Labels
         g.setColour(textLight.withAlpha(0.6f));
-        g.setFont(juce::Font(juce::FontOptions(10.0f).withStyle("Bold")));
+        g.setFont(juce::Font(10.0f, juce::Font::bold));
         g.drawText("L", bounds.getX() + 10, bounds.getCentreY() - 5, 20, 10, juce::Justification::left);
         g.drawText("R", bounds.getRight() - 30, bounds.getCentreY() - 5, 20, 10, juce::Justification::right);
 

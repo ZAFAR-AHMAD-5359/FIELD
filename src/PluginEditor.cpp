@@ -13,7 +13,7 @@ FieldAudioProcessorEditor::FieldAudioProcessorEditor(FieldAudioProcessor& p)
 
     // Title
     titleLabel.setText("FIELD — Projection Engine", juce::dontSendNotification);
-    titleLabel.setFont(juce::Font(juce::FontOptions(24.0f).withStyle("Bold")));
+    titleLabel.setFont(juce::Font(24.0f, juce::Font::bold));
     titleLabel.setColour(juce::Label::textColourId, textLight);
     titleLabel.setJustificationType(juce::Justification::centred);
     addAndMakeVisible(titleLabel);
@@ -26,7 +26,7 @@ FieldAudioProcessorEditor::FieldAudioProcessorEditor(FieldAudioProcessor& p)
     addAndMakeVisible(energyKnob);
 
     energyLabel.setText("ENERGY", juce::dontSendNotification);
-    energyLabel.setFont(juce::Font(juce::FontOptions(14.0f).withStyle("Bold")));
+    energyLabel.setFont(juce::Font(14.0f, juce::Font::bold));
     energyLabel.setColour(juce::Label::textColourId, textLight);
     energyLabel.setJustificationType(juce::Justification::centred);
     addAndMakeVisible(energyLabel);
@@ -38,7 +38,7 @@ FieldAudioProcessorEditor::FieldAudioProcessorEditor(FieldAudioProcessor& p)
     addAndMakeVisible(fieldAmountKnob);
 
     fieldLabel.setText("FIELD", juce::dontSendNotification);
-    fieldLabel.setFont(juce::Font(juce::FontOptions(12.0f).withStyle("Bold")));
+    fieldLabel.setFont(juce::Font(12.0f, juce::Font::bold));
     fieldLabel.setColour(juce::Label::textColourId, textLight);
     fieldLabel.setJustificationType(juce::Justification::centred);
     addAndMakeVisible(fieldLabel);
@@ -50,7 +50,7 @@ FieldAudioProcessorEditor::FieldAudioProcessorEditor(FieldAudioProcessor& p)
     addAndMakeVisible(modeSelector);
 
     modeLabel.setText("MODE", juce::dontSendNotification);
-    modeLabel.setFont(juce::Font(juce::FontOptions(12.0f).withStyle("Bold")));
+    modeLabel.setFont(juce::Font(12.0f, juce::Font::bold));
     modeLabel.setColour(juce::Label::textColourId, textLight);
     modeLabel.setJustificationType(juce::Justification::centred);
     addAndMakeVisible(modeLabel);
@@ -88,7 +88,7 @@ void FieldAudioProcessorEditor::paint(juce::Graphics& g)
 
     // Version label
     g.setColour(textLight.withAlpha(0.5f));
-    g.setFont(juce::Font(juce::FontOptions(10.0f)));
+    g.setFont(juce::Font(10.0f));
     g.drawText("v2.0", getWidth() - 50, 10, 40, 20, juce::Justification::centred);
 }
 
