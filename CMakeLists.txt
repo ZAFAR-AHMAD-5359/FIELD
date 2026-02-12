@@ -41,6 +41,7 @@ juce_add_plugin(FIELD
     BUNDLE_ID "com.rageinaudio.field"
     COMPANY_WEBSITE "https://rageinaudio.com"
     COMPANY_EMAIL "contact@rageinaudio.com"
+    JUCE_GENERATE_JUCE_HEADER ON
 )
 
 # Source files
