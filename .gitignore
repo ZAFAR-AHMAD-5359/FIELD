@@ -1,0 +1,35 @@
+# Build directories
+build/
+cmake-build-*/
+.vs/
+.vscode/
+*.xcodeproj
+*.xcworkspace
+
+# Compiled binaries
+*.vst3
+*.component
+*.app
+*.exe
+*.dll
+*.dylib
+*.so
+
+# IDE files
+*.user
+*.suo
+*.sdf
+*.opensdf
+*.db
+*.opendb
+.DS_Store
+
+# CMake cache
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# JUCE
+JuceLibraryCode/
+_deps/
