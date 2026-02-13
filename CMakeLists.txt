@@ -6,17 +6,13 @@ project(FIELD VERSION 2.0.0)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# macOS: Treat deprecation as warnings not errors (for JUCE 7 + macOS 15 compatibility)
-if(APPLE)
-    add_compile_options(-Wno-error=deprecated-declarations)
-endif()
-
-# Fetch JUCE 7 (stable version for reliable CI/CD builds)
+# Fetch JUCE 8 (required for macOS 15/Xcode 16 compatibility)
+# JUCE 8.0.0 includes fix for CGWindowListCreateImage deprecation
 include(FetchContent)
 FetchContent_Declare(
     JUCE
     GIT_REPOSITORY https://github.com/juce-framework/JUCE.git
-    GIT_TAG        7.0.12
+    GIT_TAG        8.0.0
     GIT_SHALLOW    TRUE
 )
 FetchContent_MakeAvailable(JUCE)
@@ -88,6 +84,4 @@ if(APPLE)
         XCODE_ATTRIBUTE_DEVELOPMENT_TEAM ""
         XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
     )
-    # Treat deprecation warnings as warnings, not errors (for JUCE 7 + macOS 15 compatibility)
-    target_compile_options(FIELD PRIVATE -Wno-error=deprecated-declarations)
 endif()
